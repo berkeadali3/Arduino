@@ -1,0 +1,30 @@
+const int buzzerPin = 3;
+const int redled = 2;
+const int flamePin = 8;
+int Flame = HIGH;
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(redled, OUTPUT);
+
+  pinMode(flamePin, INPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+ Flame = digitalRead(flamePin);
+  if (Flame== LOW)
+  {
+    digitalWrite(buzzerPin, HIGH);
+    digitalWrite(redled, HIGH);
+    
+  }
+  else
+  {
+    digitalWrite(buzzerPin, LOW);
+    digitalWrite(redled, LOW);
+    
+  }
+
+}
